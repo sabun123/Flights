@@ -61,5 +61,12 @@ module.exports = {
             }
         ]
     },
+    // Need this to bypass upstream issue with react-bootstrap-slider package
+    // There's no need to pull in entire jQuery if it's not used.
+    resolve: {
+        alias: {
+            "jquery": path.join(__dirname, "./jquery-stub.js")
+        }
+    },
     plugins: [plugin]
 }
