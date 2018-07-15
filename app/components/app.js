@@ -11,6 +11,9 @@ import store from '../store';
 import createHistory from 'history/createBrowserHistory';
 const history = createHistory();
 
+// Our styles from Bootstrap, import it here so it trickles down to all components
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 // Our pages
 import FlightSearchPage from './FlightSearchPage';
 /*

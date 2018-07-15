@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/sabun123/Flights#readme",
   "dependencies": {
-    "bootstrap": "^4.1.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.16.3",
     "history": "^4.7.2",
     "path": "^0.12.7",
