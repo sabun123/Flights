@@ -54,12 +54,10 @@ class FlightSearchResults extends React.Component {
             <div className="container-fluid">
                 <p>Your Results</p>
                 <Row>
-                    <Col xs={4}><p>Depart:</p></Col>
-                    <Col><p>1st Jan 2014</p></Col>
+                    <Col xs={4}><p>Depart: 1st Jan 2014</p></Col>
                 </Row>
                 <Row>
-                    <Col xs={4}><p>Return:</p></Col>
-                    <Col><p>10th Jan 2014</p></Col>
+                    <Col xs={4}><p>Return: 10th Jan 2014</p></Col>
                 </Row>
                 <Row>
                     <Col xs={12}>
