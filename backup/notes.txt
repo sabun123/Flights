@@ -1,0 +1,9 @@
+Dated: 16 July 2018
+
+This folder contains a file called data.json.
+
+Basically, I've made a full text copy of the data that was originally
+put on Mocky.io.
+
+Original link is here, but if it ever goes down, I have a copy of the data for re-upload elsewhere.
+http://www.mocky.io/v2/5b489ce92f00005f0f48196c
