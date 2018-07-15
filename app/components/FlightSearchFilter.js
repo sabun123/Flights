@@ -1,15 +1,23 @@
 import React from 'react';
+import { Tabs, Tab } from 'react-bootstrap';
+import FormOneWay from '../components/FormOneWay';
+import FormReturn from '../components/FormReturn';
 
 class FlightSearchFilter extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
-    render(){
+    render() {
         return (
-            <div>
-                This is where the Search Filter will go.
-            </div>
+            <Tabs defaultActiveKey={1} id="filter-tab" >
+                <Tab eventKey={1} title="One way">
+                    <FormOneWay search={this.props} />
+                </Tab>
+                <Tab eventKey={2} title="Return">
+                    <FormReturn search={this.props} />
+                </Tab>
+            </Tabs>
         )
     }
 }

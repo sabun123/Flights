@@ -15,19 +15,19 @@ const FlightResult = (props) => {
                         </Col>
                         <Col xs={2}>
                             <div>
-                                <p>{props.flightName}</p>
+                                <p>{props.arrivalFlightNo}</p>
                             </div>
-                            <div><p>{props.flightPathThere}</p></div>
-                            <div><p>Depart: {props.depart}</p></div>
-                            <div><p>Arrive: {props.arrive}</p></div>
+                            <div><p>{props.arrivalFlightName}</p></div>
+                            <div><p>Depart: {props.arrivalDepartTime}</p></div>
+                            <div><p>Arrive: {props.arrivalArriveTime}</p></div>
                         </Col>
                         <Col xs={2}>
                             <div>
-                                <p>{props.flightName}</p>
+                                <p>{props.departureFlightNo}</p>
                             </div>
-                            <div><p>{props.flightPathReturn}</p></div>
-                            <div><p>Depart: {props.depart}</p></div>
-                            <div><p>Arrive: {props.arrive}</p></div>
+                            <div><p>{props.departureFlightName}</p></div>
+                            <div><p>Depart: {props.departureDepartTime}</p></div>
+                            <div><p>Arrive: {props.departureArrivalTime}</p></div>
                         </Col>
                         <Col xs={2}>
                             <div><p style={{fontWeight:"bold",fontSize:"x-large"}}>£{props.price}</p></div>

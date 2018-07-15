@@ -16,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-bootstrap-slider/src/css/bootstrap-slider.min.css';
 
 // Our pages
-import FlightSearchPage from './FlightSearchPage';
+import FlightSearchPage from '../components/FlightSearchPage';
 /*
     Our app's JavaScript/React entry point into the HTML file.
     Here we will also define routes, which could later on be used for multiple

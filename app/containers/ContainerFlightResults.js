@@ -8,12 +8,12 @@ import FlightSearchResults from '../components/FlightSearchResults';
 
 const mapStateToProps = (state, props) => {
     return {
-        
+        flights: state.SearchPageReducer.testData.data
     }
 }
 
 const mapActionsToProps = {
-
+    
 }
 
 // Since we're using Redux we need 'connect' here to pass state & actions

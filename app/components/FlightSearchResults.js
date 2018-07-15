@@ -8,18 +8,26 @@ class FlightSearchResults extends React.Component {
     }
 
     createFlightOptions = (props) => {
-        let testData = {1:1,2:2,3:3,4:4,5:5};
-        return Object.keys(testData).map((flightData,index)=>{
-            return <FlightResult 
-                key={index}
-                flightName={"AI-202"}
-                flightPathThere={"PNQ > DEL"}
-                flightPathReturn={"PNQ > DEL"}
-                arrive={"10:00AM"}
-                depart={"12:00PM"}
-                price={"125.00"}
-            />
-        })
+        if(props.flights && props.flights.length > 0){
+            return props.flights.map((flightData,index)=>{
+                return <FlightResult 
+                    key={index}
+                    arrivalFlightName={flightData.arrival_flight.flight_name}
+                    arrivalArriveTime={flightData.arrival_flight.arrive_time}
+                    arrivalDepartTime={flightData.arrival_flight.depart_time}
+                    arrivalFlightNo={flightData.arrival_flight.flight_no}
+                    departureFlightName={flightData.departure_flight.flight_name}
+                    departureArrivalTime={flightData.departure_flight.arrive_time}
+                    departureDepartTime={flightData.departure_flight.depart_time}
+                    departureFlightNo={flightData.departure_flight.flight_no}
+                    price={flightData.price}
+                />
+            })
+        } else {
+            // No data was received so no components can be made.
+            return null;
+        }
+        
     }
 
     render() {
