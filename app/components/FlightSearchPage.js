@@ -4,7 +4,7 @@ import React from 'react';
 // Since this component doesn't need state management,
 // or lifecycle methods
 
-import {} from 'react-bootstrap';
+import { PageHeader, Grid, Row, Col } from 'react-bootstrap';
 
 // The pieces that make up this page (note that most if not all of these are containers)
 import FlightSearchFilter from '../containers/ContainerFlightSearchFilter';
@@ -15,10 +15,20 @@ const FlightSearchPage = (props) => {
     console.log("REACHED")
     return (
         <div className="container">
-            This will contain the Flight Search Page
-            <FlightSearchFilter/>
-            <FlightSearchRefiner />
-            <FlightSearchResults />
+            <PageHeader>
+                SkyPrice Search Engine
+            </PageHeader>
+            <Grid>
+                <Row>
+                    <Col xs={4}>
+                        <FlightSearchFilter />
+                        <FlightSearchRefiner />
+                    </Col>
+                    <Col xs={8}>
+                        <FlightSearchResults />
+                    </Col>
+                </Row>
+            </Grid>
         </div>
     )
 }
