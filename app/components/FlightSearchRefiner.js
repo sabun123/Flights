@@ -27,7 +27,7 @@ const FlightSearchRefiner = (props) => {
                 <Col xs={12}>
                     <div>
                         <ReactBootstrapSlider
-                            value={0}
+                            value={125}
                             //change={}
                             max={200}
                             min={0}

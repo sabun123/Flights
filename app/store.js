@@ -5,6 +5,7 @@ import {createStore,combineReducers,applyMiddleware} from 'redux';
 import {routerReducer,routerMiddleware} from 'react-router-redux';
 import {createLogger} from 'redux-logger';
 import createHistory from 'history/createBrowserHistory';
+import reduxThunk from 'redux-thunk';
 import {SearchPageReducer} from './reducers/FlightSearchReducer';
 
 // Our browser's history object (for moving forward/back between pages)
@@ -26,7 +27,7 @@ const store = createStore(
         SearchPageReducer,
         router: routerReducer
     }),
-    applyMiddleware(middleware,logger)
+    applyMiddleware(middleware,reduxThunk,logger)
 )
 
 export default store;

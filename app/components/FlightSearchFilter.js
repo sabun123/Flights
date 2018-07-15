@@ -12,10 +12,10 @@ class FlightSearchFilter extends React.Component {
         return (
             <Tabs defaultActiveKey={1} id="filter-tab" >
                 <Tab eventKey={1} title="One way">
-                    <FormOneWay search={this.props} />
+                    <FormOneWay {...this.props} />
                 </Tab>
                 <Tab eventKey={2} title="Return">
-                    <FormReturn search={this.props} />
+                    <FormReturn {...this.props} />
                 </Tab>
             </Tabs>
         )

@@ -1,37 +1,90 @@
 import React from 'react';
-import { Panel, SplitButton, MenuItem, Button } from 'react-bootstrap';
+import DatePicker from 'react-bootstrap-date-picker';
+import { Panel, MenuItem, Button, FormControl, ControlLabel } from 'react-bootstrap';
 
-const FormOneWay = () => {
-    return (
-        <Panel>
-            <Panel.Body>
-                <div>
-                    <p>From</p>
-                    <input placeholder="e.g PNQ" />
-                    <p>Destination</p>
-                    <input placeholder="e.g DEL" />
-                    <p>Departure Date</p>
+class FormOneWay extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            from: "",
+            destination: "",
+            flight_no: ""
+        }
+    }
 
-                    <p>Passengers</p>
-                    <SplitButton
-                        // bsStyle={title.toLowerCase()}
-                        title={"Passengers"}
-                        key={4}
-                        id={`split-button-basic-${4}`}
-                    >
-                        <MenuItem eventKey="1">1</MenuItem>
-                        <MenuItem eventKey="2">2</MenuItem>
-                        <MenuItem eventKey="3">3</MenuItem>
-                        <MenuItem eventKey="4">4</MenuItem>
-                    </SplitButton>
-                </div>
-                <div style={{ textAlign: "center", marginTop:"5%"}}>
-                    <Button>Search</Button>
-                </div>
-            </Panel.Body>
-        </Panel>
+    fromOnInput(e) {
+        this.setState({ from: e.target.value.toUpperCase() })
+    }
 
-    )
+    destinationOnInput(e) {
+        this.setState({ destination: e.target.value.toUpperCase() })
+    }
+
+    flightNoInput(e) {
+        this.setState({ flight_no: e.target.value.toUpperCase() })
+    }
+
+    searchClicked() {
+        this.props.filter_flights({
+            flight_no: this.state.flight_no
+        });
+    }
+
+    render() {
+        return (
+            <Panel>
+                <Panel.Body>
+                    <div>
+                        <div>
+                            <ControlLabel>From</ControlLabel>
+                            <FormControl
+                                type="text"
+                                value={this.state.from}
+                                placeholder=""
+                                onChange={this.fromOnInput.bind(this)}
+                            />
+                        </div>
+                        <div>
+                            <ControlLabel>Destination</ControlLabel>
+                            <FormControl
+                                type="text"
+                                value={this.state.from}
+                                placeholder=""
+                                onChange={this.destinationOnInput.bind(this)}
+                            />
+                        </div>
+                        <div>
+                            <ControlLabel>Departure Date</ControlLabel>
+                            <DatePicker />
+                        </div>
+                        <div>
+                            <ControlLabel>Passengers</ControlLabel>
+                            <FormControl componentClass="select" placeholder="0">
+                                <option value="0" key="0a">0</option>
+                                <option value="1" key="1a">1</option>
+                                <option value="2" key="2a">2</option>
+                                <option value="3" key="3a">3</option>
+                                <option value="4" key="4a">4</option>
+                            </FormControl>
+                        </div>
+                        <div>
+                            <ControlLabel>Flight No</ControlLabel>
+                            <FormControl
+                                type="text"
+                                value={this.state.flight_no}
+                                placeholder="e.g AI-202"
+                                onChange={this.flightNoInput.bind(this)}
+                            />
+                        </div>
+                    </div>
+                    <div style={{ textAlign: "center", marginTop: "5%" }}>
+                        <Button onClick={this.searchClicked.bind(this)}>Search</Button>
+                    </div>
+                </Panel.Body>
+            </Panel>
+
+        )
+    }
 }
 
 export default FormOneWay;
