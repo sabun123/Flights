@@ -51,7 +51,7 @@ class FlightSearchResults extends React.Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div >
                 <p>Your Results</p>
                 <Row>
                     <Col xs={4}><p>Depart: 1st Jan 2014</p></Col>
@@ -61,7 +61,9 @@ class FlightSearchResults extends React.Component {
                 </Row>
                 <Row>
                     <Col xs={12}>
-                        {this.createFlightOptions(this.props)}
+                        <div>
+                            {this.createFlightOptions(this.props)}
+                        </div>
                     </Col>
                 </Row>
             </div>
